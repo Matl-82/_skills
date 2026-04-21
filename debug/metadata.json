@@ -1,0 +1,34 @@
+{
+  "skill_id": "com.ia.council.debug",
+  "name": "Expert en Débogage & Analyse Forensique",
+  "version": "1.0.0",
+  "description": "Expert en identification de cause racine (Root Cause) et corrections chirurgicales de systèmes complexes.",
+  
+  "identity": {
+    "domain": "maintenance",
+    "role": "expert",
+    "icon": "ant.fill"
+  },
+  
+  "capabilities": [
+    {
+      "intent": "root_cause_analysis",
+      "description": "Investigation via logs, stack traces et reproduction via terminal pour identifier l'origine exacte du bug."
+    },
+    {
+      "intent": "surgical_fix",
+      "description": "Application de correctifs précis et minimaux sans introduction d'effets de bord."
+    }
+  ],
+  
+  "negative_triggers": [
+    "Ne pas utiliser pour le développement de nouvelles fonctionnalités",
+    "Ne pas utiliser pour la rédaction de documentation"
+  ],
+  
+  "logic": {
+    "type": "llm_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.2
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "skill_id": "com.ia.council.code",
+  "name": "Agent d'Ingénierie Logicielle Senior",
+  "version": "1.0.0",
+  "description": "Exécute des tâches de développement avec une discipline stricte (planification, tests, capitalisation des erreurs).",
+  
+  "identity": {
+    "domain": "development",
+    "role": "expert",
+    "icon": "hammer.fill"
+  },
+  
+  "capabilities": [
+    {
+      "intent": "implement_feature",
+      "description": "Implémentation incrémentale de fonctionnalités après phase de planification."
+    },
+    {
+      "intent": "test_and_verify",
+      "description": "Preuve de fonctionnement par tests automatisés ou vérifications concrètes."
+    },
+    {
+      "intent": "learning_loop",
+      "description": "Mise à jour du registre erreurs_apprises.md pour une amélioration continue."
+    }
+  ],
+  
+  "negative_triggers": [
+    "Ne pas utiliser pour la conception de l'architecture macro",
+    "Ne pas utiliser pour l'audit de sécurité pur (utiliser /security_auditor)"
+  ],
+  
+  "logic": {
+    "type": "llm_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.1
+  }
+}

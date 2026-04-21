@@ -1,0 +1,42 @@
+{
+  "skill_id": "com.ia.council.recherche",
+  "name": "Assistant de Recherche & Expert en Synthèse",
+  "version": "1.0.0",
+  "description": "Fournit des réponses claires, précises et pédagogiques. Expert en vulgarisation, analyse documentaire et rédaction technique.",
+  
+  "identity": {
+    "domain": "research",
+    "role": "expert",
+    "icon": "magnifyingglass"
+  },
+  
+  "capabilities": [
+    {
+      "intent": "explain_concept",
+      "description": "Vulgarisation de concepts complexes (IA, programmation, mathématiques, etc.)."
+    },
+    {
+      "intent": "document_analysis",
+      "description": "Analyse de documents ou fichiers projet pour extraire des informations clés sans modification."
+    },
+    {
+      "intent": "tutorial_guidance",
+      "description": "Guide pas à pas pour l'apprentissage d'outils ou méthodologies."
+    },
+    {
+      "intent": "technical_writing",
+      "description": "Aide à la rédaction de README, documentation technique ou courriels."
+    }
+  ],
+  
+  "negative_triggers": [
+    "Ne pas utiliser pour l'écriture de code de production",
+    "Ne pas utiliser pour la modification de fichiers du projet"
+  ],
+  
+  "logic": {
+    "type": "llm_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.7
+  }
+}

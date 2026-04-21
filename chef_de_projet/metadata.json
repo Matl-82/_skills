@@ -1,0 +1,34 @@
+{
+  "skill_id": "com.ia.council.chef-de-projet",
+  "name": "Chef de Projet & Orchestrateur",
+  "version": "1.0.0",
+  "description": "Analyse les demandes complexes, décompose les tâches et route le travail vers les experts appropriés.",
+  
+  "identity": {
+    "domain": "management",
+    "role": "supervisor",
+    "icon": "briefcase.fill"
+  },
+  
+  "capabilities": [
+    {
+      "intent": "decompose_and_route",
+      "description": "Analyse une demande et crée une roadmap avec attribution des rôles (/architecte, /code, /debugger)."
+    },
+    {
+      "intent": "verify_coherence",
+      "description": "Vérifie que l'implémentation respecte les choix architecturaux."
+    }
+  ],
+  
+  "negative_triggers": [
+    "Ne pas utiliser pour l'écriture de code",
+    "Ne pas utiliser pour l'analyse technique profonde"
+  ],
+  
+  "logic": {
+    "type": "llm_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.2
+  }
+}
