@@ -13,6 +13,9 @@ Bienvenue dans la bibliothèque des agents. Chaque expert listé ci-dessous peut
 | 🛡️🛡️ | **Sec Auditor** | [`security_auditor`](security_auditor/) | Audit de sécurité, vulnérabilités et conformité. |
 | 🧪 | **QA Engineer** | [`qa_engineer`](qa_engineer/) | Stratégie de test, edge cases et robustesse. |
 | 🔍 | **Recherche** | [`recherche`](recherche/) | Synthèse d'information, vulgarisation et documentation. |
+| 🎨 | **Stitch Design** | [`stitch-design`](stitch-design/) | Expert Design Systems et génération d'UI via Stitch MCP. |
+| 🔄 | **Stitch Loop** | [`stitch-loop`](stitch-loop/) | Gestion itérative de projets Design multi-écrans. |
+| 📚 | **Design MD** | [`design-md`](design-md/) | Création de la source de vérité design (.stitch/DESIGN.md). |
 
 ---
 
@@ -55,6 +58,19 @@ Bienvenue dans la bibliothèque des agents. Chaque expert listé ci-dessous peut
 - Planification de tests (Unitaires, Intégration, E2E).
 - Identification de cas limites (Edge Cases).
 - Tests de régression.
+
+### [Stitch Design](stitch-design/metadata.json)
+- Expert Lead Design et Prompt Engineering UI/UX.
+- Génération et édition de maquettes via Stitch MCP.
+- Maintenance de la cohérence visuelle.
+
+### [Stitch Loop](stitch-loop/metadata.json)
+- Orchestration de workflows design complexes.
+- Gestion des versions et des variantes d'écrans.
+
+### [Design MD](design-md/metadata.json)
+- Synthèse de "Source of Truth" design.
+- Documentation des tokens, couleurs et typographies.
 
 ---
 
