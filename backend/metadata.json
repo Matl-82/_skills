@@ -34,7 +34,8 @@
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.1,
-    "model": "qwen/qwen3.6-plus-preview:free",
-    "fallback_model": "anthropic/claude-sonnet-4-6"
+    "model": "qwen/qwen3.6-plus-preview",
+    "fallback_model": "google/gemini-3.1-pro",
+    "fallback_model_2": "anthropic/claude-sonnet-4-7"
   }
 }

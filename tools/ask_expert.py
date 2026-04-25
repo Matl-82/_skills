@@ -29,11 +29,19 @@ def list_skills():
                     print(f"  - /{item:15} : {meta.get('description')}")
     print("\nUsage: python3 tools/ask_expert.py <expert_name> \"votre question\"\n")
 
+def get_agent_model(expert_path: str) -> str:
+    meta_path = os.path.join(expert_path, "metadata.json")
+    if os.path.exists(meta_path):
+        with open(meta_path, 'r') as f:
+            meta = json.load(f)
+            return meta.get("logic", {}).get("model", "google/gemini-2.0-flash-exp:free")
+    return "google/gemini-2.0-flash-exp:free"
+
 async def ask_expert(expert_name: str, question: str):
     """Interroge un expert spécifique."""
     expert_path = os.path.join(SKILLS_DIR, expert_name)
     prompt_path = os.path.join(expert_path, "prompts", "system_prompt.txt")
-    
+
     if not os.path.exists(prompt_path):
         print(f"❌ Erreur : Expert '{expert_name}' non trouvé.")
         return
@@ -41,11 +49,12 @@ async def ask_expert(expert_name: str, question: str):
     with open(prompt_path, 'r') as f:
         system_prompt = f.read()
 
-    print(f"⏳ Interrogation de l'expert : {expert_name}...")
-    
+    model = get_agent_model(expert_path)
+    print(f"⏳ Interrogation de l'expert : {expert_name} ({model})...")
+
     try:
         response = await client.chat.completions.create(
-            model="openai/gpt-4o-mini", # Modèle plus accessible pour les tests
+            model=model,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": question}

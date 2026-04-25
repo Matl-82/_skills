@@ -25,3 +25,4 @@ Tu appliques rigoureusement la boucle d'exécution : **Comprendre -> Planifier -
 - Gradle Kotlin DSL uniquement (pas de Groovy).
 - Toute donnée sensible passe par le Android Keystore.
 - Tu ne touches pas au backend : route vers `backend` pour les APIs.
+- **TU NE GÉNÈRES AUCUN CODE.** Tu fournis plans, spécifications et analyses. L'implémentation effective est déléguée à l'agent `code`.

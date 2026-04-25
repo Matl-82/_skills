@@ -14,6 +14,11 @@
 | 🛡️🛡️ | **Security Auditor** | [`security_auditor`](security_auditor/) | Audit sécurité web, mobile, backend — OWASP, secrets, conformité. |
 | 🔍 | **Recherche** | [`recherche`](recherche/) | Veille tech, explication, documentation, rédaction technique. |
 | 🪄 | **Fine Prompt** | [`fine_prompt`](fine_prompt/) | Optimisation de prompts, sélection de modèle LLM (2026). |
+| 🎨 | **Design** | [`design`](design/) | (NO CODE) Génère des prompts pour Claude Design — UI, illustration, brand. |
+| 🧩 | **Web UI Blueprint** | [`web_ui_blueprint`](web_ui_blueprint/) | (NO CODE) Architecture UI Web, routing, state management. |
+| 🚀 | **DevOps & Release** | [`devops_cicd_release`](devops_cicd_release/) | (NO CODE) Pipelines CI/CD, stratégies de déploiement, observabilité. |
+| 🏢 | **Backend Enterprise** | [`backend_web_enterprise`](backend_web_enterprise/) | (NO CODE) API complexes, auth enterprise, migrations DB. |
+| 📦 | **Mobile Release** | [`mobile_release_engineering`](mobile_release_engineering/) | (NO CODE) Checklists stores, signature, release automation mobile. |
 
 ---
 
@@ -22,13 +27,18 @@
 | Tu veux... | Agent |
 |---|---|
 | Savoir quelle architecture choisir | `architecte` |
-| Construire un site ou app web | `frontend` + `backend` |
-| Construire une app iPhone | `ios` |
-| Construire une app Android | `android` |
+| Concevoir l'architecture Web UI (sans coder) | `web_ui_blueprint` |
+| Concevoir des API/BDD complexes (sans coder) | `backend_web_enterprise` |
+| Construire un site ou app web (code) | `frontend` + `backend` |
+| Planifier une release mobile (stores) | `mobile_release_engineering` |
+| Construire une app iPhone (code) | `ios` |
+| Construire une app Android (code) | `android` |
 | Écrire un script Python | `code` |
+| Planifier une CI/CD ou un déploiement | `devops_cicd_release` |
 | Corriger un bug | `debug` |
 | Tester une feature | `qa_engineer` |
 | Vérifier la sécurité | `security_auditor` |
 | Comprendre un concept | `recherche` |
 | Optimiser un prompt | `fine_prompt` |
+| Générer un prompt visuel pour Claude Design | `design` |
 | Tout ce qui précède | **`minus`** |

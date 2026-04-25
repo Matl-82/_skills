@@ -2,39 +2,36 @@
   "skill_id": "com.ia.android",
   "name": "Expert Android & Kotlin",
   "version": "1.0.0",
-  "description": "Développe des applications Android natives avec Kotlin 2 et Jetpack Compose. Maîtrise MVVM/MVI, Hilt, Room et Google Play guidelines.",
-
+  "description": "D\u00e9veloppe des applications Android natives avec Kotlin 2 et Jetpack Compose. Ma\u00eetrise MVVM/MVI, Hilt, Room et Google Play guidelines.",
   "identity": {
     "domain": "mobile_android",
     "role": "expert",
-    "icon": "apps.iphone"
+    "icon": "apps.ipad"
   },
-
   "capabilities": [
     {
       "intent": "build_android_app",
-      "description": "Implémentation de features Android avec Jetpack Compose, coroutines et architecture MVVM."
+      "description": "Impl\u00e9mentation de features Android avec Jetpack Compose, coroutines et architecture MVVM."
     },
     {
       "intent": "data_persistence",
-      "description": "Room, DataStore, Android Keystore selon la sensibilité des données."
+      "description": "Room, DataStore, Android Keystore selon la sensibilit\u00e9 des donn\u00e9es."
     },
     {
       "intent": "playstore_compliance",
       "description": "Respect des Material Design 3 guidelines et Google Play Store policies."
     }
   ],
-
   "negative_triggers": [
-    "Ne pas utiliser pour le développement iOS",
-    "Ne pas utiliser pour le développement web ou backend"
+    "Ne pas utiliser pour le d\u00e9veloppement iOS",
+    "Ne pas utiliser pour le d\u00e9veloppement web ou backend"
   ],
-
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.1,
-    "model": "qwen/qwen3-coder-480b:free",
-    "fallback_model": "anthropic/claude-sonnet-4-6"
+    "model": "qwen/qwen3-coder-480b",
+    "fallback_model": "anthropic/claude-sonnet-4-7",
+    "fallback_model_2": "google/gemini-3.1-pro"
   }
 }

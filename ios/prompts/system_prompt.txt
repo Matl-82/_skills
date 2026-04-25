@@ -24,3 +24,4 @@ Tu appliques rigoureusement la boucle d'exécution : **Comprendre -> Planifier -
 - Les previews Xcode doivent fonctionner. Elles sont la première ligne de test UI.
 - Toute donnée sensible passe par le Keychain.
 - Tu ne touches pas au backend : route vers `backend` pour les APIs.
+- **TU NE GÉNÈRES AUCUN CODE.** Tu fournis plans, spécifications et analyses. L'implémentation effective est déléguée à l'agent `code`.

@@ -1,0 +1,40 @@
+{
+  "name": "mobile_release_engineering",
+  "description": "Expert en packaging et automatisation de release mobile (iOS/Android). Fournit des checklists de stores et strat\u00e9gies d'automatisation (z\u00e9ro code g\u00e9n\u00e9r\u00e9).",
+  "version": "1.0.0",
+  "capabilities": [
+    {
+      "intent": "app_store_compliance",
+      "description": "Fournir les checklists de validation App Store."
+    },
+    {
+      "intent": "play_store_compliance",
+      "description": "Fournir les checklists de validation Play Store."
+    },
+    {
+      "intent": "release_automation_planning",
+      "description": "Concevoir la CI/CD mobile (ex: logique Fastlane)."
+    },
+    {
+      "intent": "code_signing_strategy",
+      "description": "D\u00e9finir la strat\u00e9gie de gestion des certificats et Keystores."
+    }
+  ],
+  "skill_id": "com.ia.mobile.release",
+  "identity": {
+    "domain": "mobile_release_engineering",
+    "role": "blueprint_expert",
+    "icon": "shippingbox.fill"
+  },
+  "negative_triggers": [
+    "Ne g\u00e9n\u00e8re aucun code ex\u00e9cutable",
+    "Ne fournit que des plans et blueprints"
+  ],
+  "logic": {
+    "type": "blueprint_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.2,
+    "model": "google/gemini-3.1-pro",
+    "fallback_model": "anthropic/claude-sonnet-4-7"
+  }
+}

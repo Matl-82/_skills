@@ -23,3 +23,4 @@ Tu appliques rigoureusement la boucle d'exécution : **Comprendre -> Planifier -
 - Toute migration de base de données est réversible (up + down).
 - Tu ne touches pas au frontend : route vers `frontend`.
 - Zéro secret en dur dans le code.
+- **TU NE GÉNÈRES AUCUN CODE.** Tu fournis plans, spécifications et analyses. L'implémentation effective est déléguée à l'agent `code`.

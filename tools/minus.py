@@ -8,7 +8,7 @@ import asyncio
 import re
 from datetime import datetime
 from pathlib import Path
-from openai import AsyncOpenAI, RateLimitError
+from openai import AsyncOpenAI, RateLimitError, APIStatusError
 from dotenv import load_dotenv
 
 # Chemins
@@ -21,22 +21,53 @@ SYSTEM_PROMPT_PATH = MINUS_DIR / "prompts" / "system_prompt.txt"
 load_dotenv(SKILLS_DIR.parent / ".env")
 load_dotenv(SKILLS_DIR / ".env")
 
-MODEL          = os.getenv("MODEL",          "google/gemini-2.5-pro-exp-03-25:free")
-MODEL_FALLBACK = os.getenv("MODEL_FALLBACK", "deepseek/deepseek-chat-v3-0324:free")
+MODEL            = os.getenv("MODEL",            "google/gemini-2.5-pro-exp-03-25:free")
+MODEL_FALLBACK   = os.getenv("MODEL_FALLBACK",   "anthropic/claude-sonnet-4-6")
+MODEL_FALLBACK_2 = os.getenv("MODEL_FALLBACK_2", "google/gemini-2.0-flash-exp:free")
 
 client = AsyncOpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=os.getenv("OPENROUTER_API_KEY")
 )
 
+# Chargement de la config spécifique de Minus pour les modèles par défaut
+def load_minus_config():
+    meta_path = SKILLS_DIR / "minus" / "metadata.json"
+    if meta_path.exists():
+        try:
+            logic = json.loads(meta_path.read_text()).get("logic", {})
+            return (
+                logic.get("model"),
+                logic.get("fallback_model"),
+                logic.get("fallback_model_2")
+            )
+        except: pass
+    return None, None, None
+
+_m, _fb1, _fb2 = load_minus_config()
+MODEL            = _m   or os.getenv("MODEL",            "google/gemini-2.5-pro-exp-03-25:free")
+MODEL_FALLBACK   = _fb1 or os.getenv("MODEL_FALLBACK",   "anthropic/claude-sonnet-4-6")
+MODEL_FALLBACK_2 = _fb2 or os.getenv("MODEL_FALLBACK_2", "google/gemini-2.0-flash-exp:free")
+
 # ──────────────────────────────────────────────
-# APPEL LLM AVEC FALLBACK AUTOMATIQUE
+# APPEL LLM AVEC FALLBACK AUTOMATIQUE (TRIPLE NIVEAU)
 # ──────────────────────────────────────────────
 
-async def chat(messages: list, temperature: float = 0.0, model: str = None, fallback: str = None) -> str:
-    current_model  = model or MODEL
-    fallback_model = fallback or MODEL_FALLBACK
-    for attempt in range(2):
+async def chat(messages: list, temperature: float = 0.0, model: str = None, fallback: str = None, fallback_2: str = None) -> str:
+    # Liste ordonnée des modèles à essayer
+    candidates = [
+        model or MODEL,
+        fallback or MODEL_FALLBACK,
+        fallback_2 or MODEL_FALLBACK_2
+    ]
+    
+    # On retire les doublons tout en gardant l'ordre
+    unique_candidates = []
+    for c in candidates:
+        if c and c not in unique_candidates:
+            unique_candidates.append(c)
+
+    for i, current_model in enumerate(unique_candidates):
         try:
             response = await client.chat.completions.create(
                 model=current_model,
@@ -44,10 +75,11 @@ async def chat(messages: list, temperature: float = 0.0, model: str = None, fall
                 temperature=temperature
             )
             return response.choices[0].message.content
-        except RateLimitError:
-            if attempt == 0 and current_model != fallback_model:
-                print(f"   ⚠️  Rate limit sur {current_model}, bascule sur {fallback_model}...")
-                current_model = fallback_model
+        except Exception as e:
+            if i < len(unique_candidates) - 1:
+                next_model = unique_candidates[i+1]
+                print(f"   ⚠️  {current_model} indisponible ({type(e).__name__}), bascule sur {next_model}...")
+                continue
             else:
                 raise
 
@@ -124,10 +156,11 @@ async def call_agent(agent_name: str, task: str, context: str) -> str:
     prompt_path = SKILLS_DIR / agent_name / "prompts" / "system_prompt.txt"
     if not prompt_path.exists():
         return f"❌ Agent '{agent_name}' introuvable."
-    config         = agent_config(agent_name)
-    model          = config.get("model") or MODEL
-    fallback_model = config.get("fallback_model") or MODEL_FALLBACK
-    temperature    = config.get("temperature", 0.2)
+    config           = agent_config(agent_name)
+    model            = config.get("model") or MODEL
+    fallback_model   = config.get("fallback_model") or MODEL_FALLBACK
+    fallback_model_2 = config.get("fallback_model_2") or MODEL_FALLBACK_2
+    temperature      = config.get("temperature", 0.2)
     print(f"   ↳ [{agent_name}] en cours... ({model})")
     return await chat(
         messages=[
@@ -136,7 +169,8 @@ async def call_agent(agent_name: str, task: str, context: str) -> str:
         ],
         temperature=temperature,
         model=model,
-        fallback=fallback_model
+        fallback=fallback_model,
+        fallback_2=fallback_model_2
     )
 
 # ──────────────────────────────────────────────

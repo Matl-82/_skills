@@ -1,35 +1,33 @@
 {
-  "skill_id": "com.ia.qa-engineer",
-  "name": "Ingénieur QA & Stratégie de Test",
+  "skill_id": "com.ia.qa.engineer",
+  "name": "Ing\u00e9nieur QA & Strat\u00e9gie de Test",
   "version": "1.0.0",
-  "description": "Définit les plans de test, identifie les cas limites et garantit la robustesse du système via des tests de régression et d'intégration.",
-  
+  "description": "D\u00e9finit les plans de test, identifie les cas limites et garantit la robustesse du syst\u00e8me via des tests de r\u00e9gression et d'int\u00e9gration.",
   "identity": {
     "domain": "quality_assurance",
     "role": "expert",
     "icon": "checklist.checked"
   },
-  
   "capabilities": [
     {
       "intent": "test_planning",
-      "description": "Création de scénarios de tests détaillés et identification des edge cases."
+      "description": "Cr\u00e9ation de sc\u00e9narios de tests d\u00e9taill\u00e9s et identification des edge cases."
     },
     {
       "intent": "regression_testing",
-      "description": "Validation que les nouvelles fonctionnalités ne cassent pas l'existant."
+      "description": "Validation que les nouvelles fonctionnalit\u00e9s ne cassent pas l'existant."
     }
   ],
-  
   "negative_triggers": [
-    "Ne pas utiliser pour l'implémentation de code de production",
+    "Ne pas utiliser pour l'impl\u00e9mentation de code de production",
     "Ne pas utiliser pour la conception de l'architecture macro"
   ],
-  
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.2,
-    "model": "qwen/qwen3.6-plus-preview:free"
+    "model": "qwen/qwen3.6-plus-preview",
+    "fallback_model": "google/gemini-3.1-pro",
+    "fallback_model_2": "anthropic/claude-sonnet-4-7"
   }
 }

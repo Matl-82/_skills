@@ -1,0 +1,36 @@
+{
+  "name": "web_ui_blueprint",
+  "description": "Expert en architecture Web UI (React/Next/Vue). Fournit des blueprints, patterns de composants, strat\u00e9gies de routage et de state management (z\u00e9ro code g\u00e9n\u00e9r\u00e9).",
+  "version": "1.0.0",
+  "capabilities": [
+    {
+      "intent": "design_system_architecture",
+      "description": "D\u00e9finir le d\u00e9coupage des composants UI."
+    },
+    {
+      "intent": "state_management_strategy",
+      "description": "Recommander la strat\u00e9gie optimale de gestion d'\u00e9tat."
+    },
+    {
+      "intent": "routing_patterns",
+      "description": "Concevoir la structure de navigation et routage."
+    }
+  ],
+  "skill_id": "com.ia.web.ui.blueprint",
+  "identity": {
+    "domain": "web_ui_blueprint",
+    "role": "blueprint_expert",
+    "icon": "macwindow"
+  },
+  "negative_triggers": [
+    "Ne g\u00e9n\u00e8re aucun code ex\u00e9cutable",
+    "Ne fournit que des plans et blueprints"
+  ],
+  "logic": {
+    "type": "blueprint_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.2,
+    "model": "google/gemini-3.1-pro",
+    "fallback_model": "anthropic/claude-sonnet-4-7"
+  }
+}

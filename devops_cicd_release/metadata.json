@@ -1,0 +1,36 @@
+{
+  "name": "devops_cicd_release",
+  "description": "Expert DevOps et CI/CD. Con\u00e7oit les pipelines de test, lint, build et release (z\u00e9ro code g\u00e9n\u00e9r\u00e9).",
+  "version": "1.0.0",
+  "capabilities": [
+    {
+      "intent": "pipeline_architecture",
+      "description": "D\u00e9finir les \u00e9tapes logiques de CI/CD."
+    },
+    {
+      "intent": "release_strategy",
+      "description": "Recommander les approches de d\u00e9ploiement (Blue/Green, Canary)."
+    },
+    {
+      "intent": "deployment_blueprints",
+      "description": "Structurer les environnements et l'observabilit\u00e9."
+    }
+  ],
+  "skill_id": "com.ia.devops",
+  "identity": {
+    "domain": "devops_cicd_release",
+    "role": "blueprint_expert",
+    "icon": "arrow.triangle.2.circlepath"
+  },
+  "negative_triggers": [
+    "Ne g\u00e9n\u00e8re aucun code ex\u00e9cutable",
+    "Ne fournit que des plans et blueprints"
+  ],
+  "logic": {
+    "type": "blueprint_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.2,
+    "model": "google/gemini-3.1-pro",
+    "fallback_model": "anthropic/claude-sonnet-4-7"
+  }
+}
