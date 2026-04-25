@@ -38,7 +38,6 @@
     "type": "global_protocol",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.0,
-    "model": "qwen/qwen3.6-plus-preview:free",
-    "fallback_model": "anthropic/claude-sonnet-4-6"
+    "model": "anthropic/claude-opus-4-7"
   }
 }
