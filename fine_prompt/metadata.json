@@ -1,5 +1,5 @@
 {
-  "skill_id": "com.ia.council.fine-prompt",
+  "skill_id": "com.ia.fine-prompt",
   "name": "Expert en Ingénierie de Prompts",
   "version": "1.0.0",
   "description": "Optimise la communication humain-IA et sélectionne le modèle LLM optimal pour chaque tâche.",

@@ -34,6 +34,8 @@ fastlane/test_output
 *.log
 .env
 .env.local
+**/.env
+**/.env.local
 
 # Python / Backend
 venv/

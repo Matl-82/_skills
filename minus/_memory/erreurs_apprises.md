@@ -1,6 +1,6 @@
 # 🧠 Mémoire du Projet : Erreurs Apprises & Optimisations
 
-Ce document répertorie les incidents, les erreurs de conception et les solutions trouvées pour améliorer continuellement le développement des projets Council et Octuple.
+Ce document répertorie les incidents, les erreurs de conception et les solutions trouvées pour améliorer continuellement le développement des projets.
 
 ---
 

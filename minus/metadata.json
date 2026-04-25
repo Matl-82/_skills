@@ -1,0 +1,42 @@
+{
+  "skill_id": "com.ia.minus",
+  "name": "Minus - Orchestrateur & Standard d'Exécution",
+  "version": "2.0.0",
+  "description": "Orchestrateur principal avec mémoire persistante. Franc, direct, avec la verve de Spider-Man. Décompose, route, valide et capitalise les erreurs.",
+
+  "identity": {
+    "domain": "orchestration",
+    "role": "orchestrator",
+    "icon": "shield.checkerboard"
+  },
+
+  "capabilities": [
+    {
+      "intent": "decompose_and_route",
+      "description": "Analyse une demande, crée une roadmap et route chaque sous-tâche vers l'expert approprié (architecte, code, debug, qa_engineer, security_auditor, recherche, fine_prompt)."
+    },
+    {
+      "intent": "standardized_execution",
+      "description": "Exécution de tâches via une boucle rigoureuse en 7 étapes (Comprendre, Planifier, Déléguer, Exécuter, Valider, Capitaliser, Clôturer)."
+    },
+    {
+      "intent": "continuous_learning",
+      "description": "Identification et documentation des erreurs dans le registre erreurs_apprises.md."
+    },
+    {
+      "intent": "coherence_verification",
+      "description": "Vérifie que l'implémentation respecte les choix architecturaux et la cohérence globale du projet."
+    }
+  ],
+
+  "negative_triggers": [
+    "Ne pas utiliser pour l'écriture directe de code",
+    "Ne pas utiliser pour l'analyse technique profonde d'un seul domaine"
+  ],
+
+  "logic": {
+    "type": "global_protocol",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.0
+  }
+}

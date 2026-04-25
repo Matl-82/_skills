@@ -1,5 +1,5 @@
 {
-  "skill_id": "com.ia.council.qa-engineer",
+  "skill_id": "com.ia.qa-engineer",
   "name": "Ingénieur QA & Stratégie de Test",
   "version": "1.0.0",
   "description": "Définit les plans de test, identifie les cas limites et garantit la robustesse du système via des tests de régression et d'intégration.",

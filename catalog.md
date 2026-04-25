@@ -4,8 +4,7 @@ Bienvenue dans la bibliothèque des agents. Chaque expert listé ci-dessous peut
 
 | Icone | Nom du Rôle | Dossier | Mission Principale |
 | :--- | :--- | :--- | :--- |
-| 🛡️ | **Master Protocol** | [`master_protocol`](master_protocol/) | Standard global d'exécution et d'apprentissage continu. |
-| 💼 | **Chef de Projet** | [`chef_de_projet`](chef_de_projet/) | Analyse, décomposition et routage des tâches complexes. |
+| 🛡️ | **Minus** | [`minus`](minus/) | Orchestrateur principal : décomposition, routage, exécution disciplinée et apprentissage continu. |
 | 🏗️ | **Architecte** | [`architecte`](architecte/) | Vision macro, choix technologiques et structure système. |
 | 🔨 | **Codeur** | [`code`](code/) | Implémentation disciplinée et tests de fonctionnalités. |
 | 🐜 | **Debugger** | [`debug`](debug/) | Analyse forensique et corrections chirurgicales. |
@@ -13,9 +12,6 @@ Bienvenue dans la bibliothèque des agents. Chaque expert listé ci-dessous peut
 | 🛡️🛡️ | **Sec Auditor** | [`security_auditor`](security_auditor/) | Audit de sécurité, vulnérabilités et conformité. |
 | 🧪 | **QA Engineer** | [`qa_engineer`](qa_engineer/) | Stratégie de test, edge cases et robustesse. |
 | 🔍 | **Recherche** | [`recherche`](recherche/) | Synthèse d'information, vulgarisation et documentation. |
-| 🎨 | **Stitch Design** | [`stitch-design`](stitch-design/) | Expert Design Systems et génération d'UI via Stitch MCP. |
-| 🔄 | **Stitch Loop** | [`stitch-loop`](stitch-loop/) | Gestion itérative de projets Design multi-écrans. |
-| 📚 | **Design MD** | [`design-md`](design-md/) | Création de la source de vérité design (.stitch/DESIGN.md). |
 
 ---
 
@@ -26,10 +22,11 @@ Bienvenue dans la bibliothèque des agents. Chaque expert listé ci-dessous peut
 - Évaluation technique d'outils et bibliothèques.
 - Standardisation (nommage, sécurité, documentation).
 
-### [Chef de Projet](chef_de_projet/metadata.json)
-- Décomposition de roadmap.
-- Routage intelligent vers les experts (/architecte, /code, /debug).
-- Vérification de la cohérence globale.
+### [Minus](minus/metadata.json)
+- Décomposition de roadmap et création de feuilles de route.
+- Routage intelligent vers les experts (architecte, code, debug, qa_engineer, security_auditor, recherche, fine_prompt).
+- Exécution disciplinée via la boucle en 7 étapes.
+- Capitalisation des erreurs dans `minus/_memory/erreurs_apprises.md`.
 
 ### [Codeur](code/metadata.json)
 - Implémentation incrémentale.
@@ -58,19 +55,6 @@ Bienvenue dans la bibliothèque des agents. Chaque expert listé ci-dessous peut
 - Planification de tests (Unitaires, Intégration, E2E).
 - Identification de cas limites (Edge Cases).
 - Tests de régression.
-
-### [Stitch Design](stitch-design/metadata.json)
-- Expert Lead Design et Prompt Engineering UI/UX.
-- Génération et édition de maquettes via Stitch MCP.
-- Maintenance de la cohérence visuelle.
-
-### [Stitch Loop](stitch-loop/metadata.json)
-- Orchestration de workflows design complexes.
-- Gestion des versions et des variantes d'écrans.
-
-### [Design MD](design-md/metadata.json)
-- Synthèse de "Source of Truth" design.
-- Documentation des tokens, couleurs et typographies.
 
 ---
 
