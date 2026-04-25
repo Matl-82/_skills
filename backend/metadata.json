@@ -1,0 +1,38 @@
+{
+  "skill_id": "com.ia.backend",
+  "name": "Expert Backend & API",
+  "version": "1.0.0",
+  "description": "Construit des APIs REST/GraphQL robustes (FastAPI, Node.js). Maîtrise bases de données, auth, sécurité et déploiement.",
+
+  "identity": {
+    "domain": "backend",
+    "role": "expert",
+    "icon": "server.rack"
+  },
+
+  "capabilities": [
+    {
+      "intent": "build_api",
+      "description": "Conception et implémentation d'APIs REST ou GraphQL avec versioning et contrat clair."
+    },
+    {
+      "intent": "database_design",
+      "description": "Modélisation de base de données, migrations, optimisation des requêtes."
+    },
+    {
+      "intent": "auth_security",
+      "description": "Implémentation de l'authentification (JWT, OAuth2) et des autorisations."
+    }
+  ],
+
+  "negative_triggers": [
+    "Ne pas utiliser pour le développement frontend ou UI",
+    "Ne pas utiliser pour le développement mobile natif (iOS/Android)"
+  ],
+
+  "logic": {
+    "type": "llm_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.1
+  }
+}

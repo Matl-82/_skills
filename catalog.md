@@ -1,62 +1,34 @@
-# 📖 Bibliothèque des Rôles (Skills Catalog)
+# 📖 Bibliothèque des Agents
 
-Bienvenue dans la bibliothèque des agents. Chaque expert listé ci-dessous peut être invoqué pour des tâches spécifiques.
-
-| Icone | Nom du Rôle | Dossier | Mission Principale |
+| Icône | Nom | Dossier | Mission |
 | :--- | :--- | :--- | :--- |
-| 🛡️ | **Minus** | [`minus`](minus/) | Orchestrateur principal : décomposition, routage, exécution disciplinée et apprentissage continu. |
-| 🏗️ | **Architecte** | [`architecte`](architecte/) | Vision macro, choix technologiques et structure système. |
-| 🔨 | **Codeur** | [`code`](code/) | Implémentation disciplinée et tests de fonctionnalités. |
-| 🐜 | **Debugger** | [`debug`](debug/) | Analyse forensique et corrections chirurgicales. |
-| 🪄 | **Fine Prompt** | [`fine_prompt`](fine_prompt/) | Optimisation des interactions et sélection des LLM. |
-| 🛡️🛡️ | **Sec Auditor** | [`security_auditor`](security_auditor/) | Audit de sécurité, vulnérabilités et conformité. |
-| 🧪 | **QA Engineer** | [`qa_engineer`](qa_engineer/) | Stratégie de test, edge cases et robustesse. |
-| 🔍 | **Recherche** | [`recherche`](recherche/) | Synthèse d'information, vulgarisation et documentation. |
+| 🛡️ | **Minus** | [`minus`](minus/) | Orchestrateur principal — décompose, route, valide, mémorise. |
+| 🏗️ | **Architecte** | [`architecte`](architecte/) | Vision macro, choix technologiques, structure système toutes plateformes. |
+| 🔨 | **Code** | [`code`](code/) | Implémentation générique — Python, scripts, CLI, glue code. |
+| 🌐 | **Frontend** | [`frontend`](frontend/) | Web : React, Next.js, Tailwind, TypeScript, performance, accessibilité. |
+| ⚙️ | **Backend** | [`backend`](backend/) | API REST/GraphQL, FastAPI/Node.js, bases de données, auth, déploiement. |
+| 📱 | **iOS** | [`ios`](ios/) | Apps iPhone/iPad — Swift 6, SwiftUI, MVVM, App Store. |
+| 🤖 | **Android** | [`android`](android/) | Apps Android — Kotlin 2, Jetpack Compose, MVVM/MVI, Google Play. |
+| 🐜 | **Debug** | [`debug`](debug/) | Analyse forensique et corrections chirurgicales toutes plateformes. |
+| 🧪 | **QA Engineer** | [`qa_engineer`](qa_engineer/) | Tests, edge cases, régression — XCTest, Espresso, Jest, pytest. |
+| 🛡️🛡️ | **Security Auditor** | [`security_auditor`](security_auditor/) | Audit sécurité web, mobile, backend — OWASP, secrets, conformité. |
+| 🔍 | **Recherche** | [`recherche`](recherche/) | Veille tech, explication, documentation, rédaction technique. |
+| 🪄 | **Fine Prompt** | [`fine_prompt`](fine_prompt/) | Optimisation de prompts, sélection de modèle LLM (2026). |
 
 ---
 
-## 📋 Détails des Capacités
+## Routage rapide
 
-### [Architecte](architecte/metadata.json)
-- Conception de systèmes (Monolithe, Microservices).
-- Évaluation technique d'outils et bibliothèques.
-- Standardisation (nommage, sécurité, documentation).
-
-### [Minus](minus/metadata.json)
-- Décomposition de roadmap et création de feuilles de route.
-- Routage intelligent vers les experts (architecte, code, debug, qa_engineer, security_auditor, recherche, fine_prompt).
-- Exécution disciplinée via la boucle en 7 étapes.
-- Capitalisation des erreurs dans `minus/_memory/erreurs_apprises.md`.
-
-### [Codeur](code/metadata.json)
-- Implémentation incrémentale.
-- Preuve par le test.
-- Capitalisation des erreurs.
-
-### [Debugger](debug/metadata.json)
-- Analyse de logs et Root Cause Analysis.
-- Corrections chirurgicales (fixes minimaux).
-
-### [Fine Prompt](fine_prompt/metadata.json)
-- Optimisation de prompts (CoT, Few-Shot).
-- Recommandation de modèles (Claude, Gemini, DeepSeek, etc.).
-
-### [Recherche](recherche/metadata.json)
-- Vulgarisation de concepts complexes.
-- Analyse documentaire sans modification.
-- Rédaction technique (README, Doc).
-
-### [Security Auditor](security_auditor/metadata.json)
-- Scan de vulnérabilités (OWASP).
-- Audit des protocoles d'authentification.
-- Gestion sécurisée des secrets.
-
-### [QA Engineer](qa_engineer/metadata.json)
-- Planification de tests (Unitaires, Intégration, E2E).
-- Identification de cas limites (Edge Cases).
-- Tests de régression.
-
----
-
-## 🚦 Routage Intelligent (Triggers Négatifs)
-Tous les skills intègrent désormais des `negative_triggers` dans leur `metadata.json`. Cela permet d'affiner la sélection automatique de l'agent en définissant explicitement ce qu'il **ne doit pas** faire.
+| Tu veux... | Agent |
+|---|---|
+| Savoir quelle architecture choisir | `architecte` |
+| Construire un site ou app web | `frontend` + `backend` |
+| Construire une app iPhone | `ios` |
+| Construire une app Android | `android` |
+| Écrire un script Python | `code` |
+| Corriger un bug | `debug` |
+| Tester une feature | `qa_engineer` |
+| Vérifier la sécurité | `security_auditor` |
+| Comprendre un concept | `recherche` |
+| Optimiser un prompt | `fine_prompt` |
+| Tout ce qui précède | **`minus`** |

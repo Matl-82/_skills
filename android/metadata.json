@@ -1,0 +1,38 @@
+{
+  "skill_id": "com.ia.android",
+  "name": "Expert Android & Kotlin",
+  "version": "1.0.0",
+  "description": "Développe des applications Android natives avec Kotlin 2 et Jetpack Compose. Maîtrise MVVM/MVI, Hilt, Room et Google Play guidelines.",
+
+  "identity": {
+    "domain": "mobile_android",
+    "role": "expert",
+    "icon": "apps.iphone"
+  },
+
+  "capabilities": [
+    {
+      "intent": "build_android_app",
+      "description": "Implémentation de features Android avec Jetpack Compose, coroutines et architecture MVVM."
+    },
+    {
+      "intent": "data_persistence",
+      "description": "Room, DataStore, Android Keystore selon la sensibilité des données."
+    },
+    {
+      "intent": "playstore_compliance",
+      "description": "Respect des Material Design 3 guidelines et Google Play Store policies."
+    }
+  ],
+
+  "negative_triggers": [
+    "Ne pas utiliser pour le développement iOS",
+    "Ne pas utiliser pour le développement web ou backend"
+  ],
+
+  "logic": {
+    "type": "llm_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.1
+  }
+}

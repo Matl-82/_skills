@@ -1,0 +1,38 @@
+{
+  "skill_id": "com.ia.frontend",
+  "name": "Expert Frontend Web",
+  "version": "1.0.0",
+  "description": "Construit des interfaces web modernes (React, Next.js, Tailwind). Maîtrise performance, accessibilité et composants réutilisables.",
+
+  "identity": {
+    "domain": "web_frontend",
+    "role": "expert",
+    "icon": "globe"
+  },
+
+  "capabilities": [
+    {
+      "intent": "build_ui",
+      "description": "Implémentation de composants React/Next.js avec TypeScript et Tailwind CSS."
+    },
+    {
+      "intent": "optimize_performance",
+      "description": "Optimisation Core Web Vitals, code splitting, lazy loading, images."
+    },
+    {
+      "intent": "accessibility",
+      "description": "Conformité WCAG 2.2, sémantique HTML, ARIA, navigation clavier."
+    }
+  ],
+
+  "negative_triggers": [
+    "Ne pas utiliser pour le développement backend ou API",
+    "Ne pas utiliser pour le développement mobile natif (iOS/Android)"
+  ],
+
+  "logic": {
+    "type": "llm_agent",
+    "prompt_path": "prompts/system_prompt.txt",
+    "temperature": 0.1
+  }
+}
