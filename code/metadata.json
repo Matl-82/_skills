@@ -34,7 +34,6 @@
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.1,
-    "model": "qwen/qwen3-coder-480b:free",
-    "fallback_model": "anthropic/claude-opus-4-7"
+    "model": "anthropic/claude-opus-4-7"
   }
 }

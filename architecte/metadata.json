@@ -34,7 +34,6 @@
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.3,
-    "model": "qwen/qwen3.6-plus-preview:free",
-    "fallback_model": "google/gemini-3.1-pro"
+    "model": "google/gemini-3.1-pro"
   }
 }
