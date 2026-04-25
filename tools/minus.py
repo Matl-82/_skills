@@ -31,6 +31,14 @@ client = AsyncOpenAI(
 )
 
 # Chargement de la config spécifique de Minus pour les modèles par défaut
+FREE_FALLBACKS = [
+    "openai/gpt-oss-20b:free",
+    "nvidia/nemotron-3-nano-30b-a3b:free",
+    "google/gemma-3-27b-it:free",
+    "meta-llama/llama-3.3-70b-instruct:free",
+    "google/gemma-4-31b-it:free",
+]
+
 def load_minus_config():
     meta_path = SKILLS_DIR / "minus" / "metadata.json"
     if meta_path.exists():
@@ -39,31 +47,22 @@ def load_minus_config():
             return (
                 logic.get("model"),
                 logic.get("fallback_model"),
-                logic.get("fallback_model_2")
             )
         except: pass
-    return None, None, None
+    return None, None
 
-_m, _fb1, _fb2 = load_minus_config()
-MODEL            = _m   or os.getenv("MODEL",            "google/gemini-2.5-pro-exp-03-25:free")
-MODEL_FALLBACK   = _fb1 or os.getenv("MODEL_FALLBACK",   "anthropic/claude-sonnet-4-6")
-MODEL_FALLBACK_2 = _fb2 or os.getenv("MODEL_FALLBACK_2", "google/gemini-2.0-flash-exp:free")
+_m, _fb1 = load_minus_config()
+MODEL          = _m   or os.getenv("MODEL",          "google/gemini-2.5-pro-exp-03-25:free")
+MODEL_FALLBACK = _fb1 or os.getenv("MODEL_FALLBACK", "anthropic/claude-sonnet-4-6")
 
 # ──────────────────────────────────────────────
-# APPEL LLM AVEC FALLBACK AUTOMATIQUE (TRIPLE NIVEAU)
+# APPEL LLM AVEC FALLBACK AUTOMATIQUE
 # ──────────────────────────────────────────────
 
 async def chat(messages: list, temperature: float = 0.0, model: str = None, fallback: str = None, fallback_2: str = None) -> str:
-    # Liste ordonnée des modèles à essayer
-    candidates = [
-        model or MODEL,
-        fallback or MODEL_FALLBACK,
-        fallback_2 or MODEL_FALLBACK_2
-    ]
-    
-    # On retire les doublons tout en gardant l'ordre
+    paid = [model or MODEL, fallback or MODEL_FALLBACK]
     unique_candidates = []
-    for c in candidates:
+    for c in paid + FREE_FALLBACKS:
         if c and c not in unique_candidates:
             unique_candidates.append(c)
 
@@ -74,7 +73,10 @@ async def chat(messages: list, temperature: float = 0.0, model: str = None, fall
                 messages=messages,
                 temperature=temperature
             )
-            return response.choices[0].message.content
+            content = response.choices[0].message.content
+            if content is None:
+                raise ValueError("contenu vide (content: null)")
+            return content
         except Exception as e:
             if i < len(unique_candidates) - 1:
                 next_model = unique_candidates[i+1]
