@@ -33,6 +33,7 @@
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
-    "temperature": 0.1
+    "temperature": 0.1,
+    "model": "anthropic/claude-opus-4-7"
   }
 }

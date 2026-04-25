@@ -29,6 +29,7 @@
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
-    "temperature": 0.5
+    "temperature": 0.5,
+    "model": "deepseek/deepseek-chat-v3-0324:free"
   }
 }

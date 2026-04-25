@@ -33,20 +33,20 @@ client = AsyncOpenAI(
 # APPEL LLM AVEC FALLBACK AUTOMATIQUE
 # ──────────────────────────────────────────────
 
-async def chat(messages: list, temperature: float = 0.0) -> str:
-    model = MODEL
+async def chat(messages: list, temperature: float = 0.0, model: str = None) -> str:
+    current_model = model or MODEL
     for attempt in range(2):
         try:
             response = await client.chat.completions.create(
-                model=model,
+                model=current_model,
                 messages=messages,
                 temperature=temperature
             )
             return response.choices[0].message.content
         except RateLimitError:
-            if attempt == 0:
-                print(f"   ⚠️  Rate limit sur {model}, bascule sur {MODEL_FALLBACK}...")
-                model = MODEL_FALLBACK
+            if attempt == 0 and current_model == MODEL:
+                print(f"   ⚠️  Rate limit sur {current_model}, bascule sur {MODEL_FALLBACK}...")
+                current_model = MODEL_FALLBACK
             else:
                 raise
 
@@ -110,17 +110,30 @@ def strip_blocks(text: str) -> str:
 # AGENTS
 # ──────────────────────────────────────────────
 
+def agent_config(agent_name: str) -> dict:
+    meta_path = SKILLS_DIR / agent_name / "metadata.json"
+    if not meta_path.exists():
+        return {}
+    try:
+        return json.loads(meta_path.read_text()).get("logic", {})
+    except json.JSONDecodeError:
+        return {}
+
 async def call_agent(agent_name: str, task: str, context: str) -> str:
     prompt_path = SKILLS_DIR / agent_name / "prompts" / "system_prompt.txt"
     if not prompt_path.exists():
         return f"❌ Agent '{agent_name}' introuvable."
-    print(f"   ↳ [{agent_name}] en cours...")
+    config      = agent_config(agent_name)
+    model       = config.get("model") or MODEL
+    temperature = config.get("temperature", 0.2)
+    print(f"   ↳ [{agent_name}] en cours... ({model})")
     return await chat(
         messages=[
             {"role": "system", "content": prompt_path.read_text()},
             {"role": "user",   "content": f"{context}\n\nTâche : {task}".strip()}
         ],
-        temperature=0.2
+        temperature=temperature,
+        model=model
     )
 
 # ──────────────────────────────────────────────
