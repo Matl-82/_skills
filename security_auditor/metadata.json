@@ -31,5 +31,6 @@
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.1,
     "model": "deepseek/deepseek-r1:free"
+
   }
 }

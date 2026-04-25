@@ -33,8 +33,9 @@ client = AsyncOpenAI(
 # APPEL LLM AVEC FALLBACK AUTOMATIQUE
 # ──────────────────────────────────────────────
 
-async def chat(messages: list, temperature: float = 0.0, model: str = None) -> str:
-    current_model = model or MODEL
+async def chat(messages: list, temperature: float = 0.0, model: str = None, fallback: str = None) -> str:
+    current_model  = model or MODEL
+    fallback_model = fallback or MODEL_FALLBACK
     for attempt in range(2):
         try:
             response = await client.chat.completions.create(
@@ -44,9 +45,9 @@ async def chat(messages: list, temperature: float = 0.0, model: str = None) -> s
             )
             return response.choices[0].message.content
         except RateLimitError:
-            if attempt == 0 and current_model == MODEL:
-                print(f"   ⚠️  Rate limit sur {current_model}, bascule sur {MODEL_FALLBACK}...")
-                current_model = MODEL_FALLBACK
+            if attempt == 0 and current_model != fallback_model:
+                print(f"   ⚠️  Rate limit sur {current_model}, bascule sur {fallback_model}...")
+                current_model = fallback_model
             else:
                 raise
 
@@ -123,9 +124,10 @@ async def call_agent(agent_name: str, task: str, context: str) -> str:
     prompt_path = SKILLS_DIR / agent_name / "prompts" / "system_prompt.txt"
     if not prompt_path.exists():
         return f"❌ Agent '{agent_name}' introuvable."
-    config      = agent_config(agent_name)
-    model       = config.get("model") or MODEL
-    temperature = config.get("temperature", 0.2)
+    config         = agent_config(agent_name)
+    model          = config.get("model") or MODEL
+    fallback_model = config.get("fallback_model") or MODEL_FALLBACK
+    temperature    = config.get("temperature", 0.2)
     print(f"   ↳ [{agent_name}] en cours... ({model})")
     return await chat(
         messages=[
@@ -133,7 +135,8 @@ async def call_agent(agent_name: str, task: str, context: str) -> str:
             {"role": "user",   "content": f"{context}\n\nTâche : {task}".strip()}
         ],
         temperature=temperature,
-        model=model
+        model=model,
+        fallback=fallback_model
     )
 
 # ──────────────────────────────────────────────
