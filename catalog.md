@@ -42,3 +42,14 @@
 | Optimiser un prompt | `fine_prompt` |
 | Générer un prompt visuel pour Claude Design | `design` |
 | Tout ce qui précède | **`minus`** |
+| Développer en boucle sécurisée | `safe_dev_loop` |
+
+---
+
+## 🛠️ Outils d'Exécution
+
+| Script | Description |
+| :--- | :--- |
+| `tools/minus.py` | L'orchestrateur interactif. Le point d'entrée principal pour discuter avec Minus. |
+| `tools/ask_expert.py` | Pose une question isolée à un expert spécifique (ex: `python3 tools/ask_expert.py ios "Comment faire..."`). |
+| `tools/safe_dev_loop.py` | Boucle de développement sécurisée : Code -> Test -> Debug -> Rollback Git automatique en cas d'échec. |

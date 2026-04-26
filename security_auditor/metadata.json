@@ -1,8 +1,8 @@
 {
   "skill_id": "com.ia.security.auditor",
-  "name": "Auditeur S\u00e9curit\u00e9 & Conformit\u00e9",
+  "name": "Auditeur Sécurité & Conformité",
   "version": "1.0.0",
-  "description": "Analyse le code et l'architecture pour identifier les vuln\u00e9rabilit\u00e9s et garantir le respect des meilleures pratiques de s\u00e9curit\u00e9.",
+  "description": "Analyse le code et l'architecture pour identifier les vulnérabilités et garantir le respect des meilleures pratiques de sécurité.",
   "identity": {
     "domain": "security",
     "role": "expert",
@@ -11,23 +11,23 @@
   "capabilities": [
     {
       "intent": "vulnerability_scan",
-      "description": "Identification de failles (OWASP Top 10, fuites de cl\u00e9s, injections)."
+      "description": "Identification de failles (OWASP Top 10, fuites de clés, injections)."
     },
     {
       "intent": "security_review",
-      "description": "Audit des protocoles d'authentification et de stockage des donn\u00e9es sensibles."
+      "description": "Audit des protocoles d'authentification et de stockage des données sensibles."
     }
   ],
   "negative_triggers": [
-    "Ne pas utiliser pour le d\u00e9veloppement de nouvelles fonctionnalit\u00e9s",
-    "Ne pas utiliser pour le d\u00e9bogage de bugs non li\u00e9s \u00e0 la s\u00e9curit\u00e9"
+    "Ne pas utiliser pour le développement de nouvelles fonctionnalités",
+    "Ne pas utiliser pour le débogage de bugs non liés à la sécurité"
   ],
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.1,
-    "model": "deepseek/deepseek-r1",
-    "fallback_model": "anthropic/claude-opus-4-7",
-    "fallback_model_2": "google/gemini-3.1-pro"
+    "model": "deepseek/deepseek-v4-pro",
+    "fallback_model": "anthropic/claude-opus-4.7",
+    "fallback_model_2": "google/gemini-3.1-pro-preview"
   }
 }

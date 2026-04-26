@@ -1,6 +1,6 @@
 {
   "name": "backend_web_enterprise",
-  "description": "Expert en architecture Backend Enterprise. Fournit des blueprints d'API complexes (pagination, auth, migrations DB) et strat\u00e9gies de tests d'int\u00e9gration (z\u00e9ro code g\u00e9n\u00e9r\u00e9).",
+  "description": "Expert en architecture Backend Enterprise. Fournit des blueprints d'API complexes (pagination, auth, migrations DB) et stratégies de tests d'intégration (zéro code généré).",
   "version": "1.0.0",
   "capabilities": [
     {
@@ -9,15 +9,15 @@
     },
     {
       "intent": "database_migration_strategies",
-      "description": "Planifier les migrations de sch\u00e9mas sans downtime."
+      "description": "Planifier les migrations de schémas sans downtime."
     },
     {
       "intent": "authentication_architecture",
-      "description": "D\u00e9finir l'architecture de s\u00e9curit\u00e9 (OAuth2, RBAC)."
+      "description": "Définir l'architecture de sécurité (OAuth2, RBAC)."
     },
     {
       "intent": "integration_testing_plans",
-      "description": "Concevoir la strat\u00e9gie de tests de contrats d'API et de charge."
+      "description": "Concevoir la stratégie de tests de contrats d'API et de charge."
     }
   ],
   "skill_id": "com.ia.backend.enterprise",
@@ -27,14 +27,15 @@
     "icon": "building.columns.fill"
   },
   "negative_triggers": [
-    "Ne g\u00e9n\u00e8re aucun code ex\u00e9cutable",
+    "Ne génère aucun code exécutable",
     "Ne fournit que des plans et blueprints"
   ],
   "logic": {
     "type": "blueprint_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.2,
-    "model": "google/gemini-3.1-pro",
-    "fallback_model": "anthropic/claude-sonnet-4-7"
+    "model": "google/gemini-3.1-pro-preview",
+    "fallback_model": "anthropic/claude-sonnet-4.6",
+    "fallback_model_2": "openai/gpt-5.5"
   }
 }

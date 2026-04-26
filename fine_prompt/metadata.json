@@ -1,8 +1,8 @@
 {
   "skill_id": "com.ia.fine.prompt",
-  "name": "Expert en Ing\u00e9nierie de Prompts",
+  "name": "Expert en Ingénierie de Prompts",
   "version": "1.0.0",
-  "description": "Optimise la communication humain-IA et s\u00e9lectionne le mod\u00e8le LLM optimal pour chaque t\u00e2che.",
+  "description": "Optimise la communication humain-IA et sélectionne le modèle LLM optimal pour chaque tâche.",
   "identity": {
     "domain": "ai_engineering",
     "role": "expert",
@@ -11,23 +11,23 @@
   "capabilities": [
     {
       "intent": "prompt_optimization",
-      "description": "Am\u00e9lioration des prompts via CoT, Few-Shot, d\u00e9limiteurs et personnalisation."
+      "description": "Amélioration des prompts via CoT, Few-Shot, délimiteurs et personnalisation."
     },
     {
       "intent": "model_selection",
-      "description": "Recommandation du mod\u00e8le optimal (Claude, DeepSeek, Gemini, GPT, etc.) selon le besoin."
+      "description": "Recommandation du modèle optimal (Claude, DeepSeek, Gemini, GPT, etc.) selon le besoin."
     }
   ],
   "negative_triggers": [
-    "Ne pas utiliser pour l'ex\u00e9cution de code ou de tests",
+    "Ne pas utiliser pour l'exécution de code ou de tests",
     "Ne pas utiliser pour l'analyse de bugs applicatifs"
   ],
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.5,
-    "model": "deepseek/deepseek-v3.2",
-    "fallback_model": "anthropic/claude-sonnet-4-7",
-    "fallback_model_2": "google/gemini-3.1-pro"
+    "model": "deepseek/deepseek-v4-pro",
+    "fallback_model": "anthropic/claude-sonnet-4.6",
+    "fallback_model_2": "google/gemini-3.1-pro-preview"
   }
 }

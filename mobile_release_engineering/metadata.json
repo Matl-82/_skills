@@ -1,6 +1,6 @@
 {
   "name": "mobile_release_engineering",
-  "description": "Expert en packaging et automatisation de release mobile (iOS/Android). Fournit des checklists de stores et strat\u00e9gies d'automatisation (z\u00e9ro code g\u00e9n\u00e9r\u00e9).",
+  "description": "Expert en packaging et automatisation de release mobile (iOS/Android). Fournit des checklists de stores et stratégies d'automatisation (zéro code généré).",
   "version": "1.0.0",
   "capabilities": [
     {
@@ -17,7 +17,7 @@
     },
     {
       "intent": "code_signing_strategy",
-      "description": "D\u00e9finir la strat\u00e9gie de gestion des certificats et Keystores."
+      "description": "Définir la stratégie de gestion des certificats et Keystores."
     }
   ],
   "skill_id": "com.ia.mobile.release",
@@ -27,14 +27,14 @@
     "icon": "shippingbox.fill"
   },
   "negative_triggers": [
-    "Ne g\u00e9n\u00e8re aucun code ex\u00e9cutable",
+    "Ne génère aucun code exécutable",
     "Ne fournit que des plans et blueprints"
   ],
   "logic": {
     "type": "blueprint_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.2,
-    "model": "google/gemini-3.1-pro",
-    "fallback_model": "anthropic/claude-sonnet-4-7"
+    "model": "google/gemini-3.1-pro-preview",
+    "fallback_model": "anthropic/claude-sonnet-4.6"
   }
 }

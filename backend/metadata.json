@@ -3,13 +3,11 @@
   "name": "Expert Backend & API",
   "version": "1.0.0",
   "description": "Construit des APIs REST/GraphQL robustes (FastAPI, Node.js). Maîtrise bases de données, auth, sécurité et déploiement.",
-
   "identity": {
     "domain": "backend",
     "role": "expert",
     "icon": "server.rack"
   },
-
   "capabilities": [
     {
       "intent": "build_api",
@@ -24,18 +22,16 @@
       "description": "Implémentation de l'authentification (JWT, OAuth2) et des autorisations."
     }
   ],
-
   "negative_triggers": [
     "Ne pas utiliser pour le développement frontend ou UI",
     "Ne pas utiliser pour le développement mobile natif (iOS/Android)"
   ],
-
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.1,
-    "model": "qwen/qwen3.6-plus-preview",
-    "fallback_model": "google/gemini-3.1-pro",
-    "fallback_model_2": "anthropic/claude-sonnet-4-7"
+    "model": "qwen/qwen3.6-plus",
+    "fallback_model": "google/gemini-3.1-pro-preview",
+    "fallback_model_2": "anthropic/claude-sonnet-4.6"
   }
 }

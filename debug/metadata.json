@@ -3,13 +3,11 @@
   "name": "Expert en Débogage & Analyse Forensique",
   "version": "1.0.0",
   "description": "Expert en identification de cause racine (Root Cause) et corrections chirurgicales de systèmes complexes.",
-  
   "identity": {
     "domain": "maintenance",
     "role": "expert",
     "icon": "ant.fill"
   },
-  
   "capabilities": [
     {
       "intent": "root_cause_analysis",
@@ -20,18 +18,16 @@
       "description": "Application de correctifs précis et minimaux sans introduction d'effets de bord."
     }
   ],
-  
   "negative_triggers": [
     "Ne pas utiliser pour le développement de nouvelles fonctionnalités",
     "Ne pas utiliser pour la rédaction de documentation"
   ],
-  
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.2,
-    "model": "deepseek/deepseek-r1",
-    "fallback_model": "google/gemini-3.1-pro",
-    "fallback_model_2": "qwen/qwen3-coder-480b"
+    "model": "deepseek/deepseek-v4-pro",
+    "fallback_model": "google/gemini-3.1-pro-preview",
+    "fallback_model_2": "qwen/qwen3-coder-next"
   }
 }

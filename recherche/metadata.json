@@ -3,13 +3,11 @@
   "name": "Assistant de Recherche & Expert en Synthèse",
   "version": "1.0.0",
   "description": "Fournit des réponses claires, précises et pédagogiques. Expert en vulgarisation, analyse documentaire et rédaction technique.",
-  
   "identity": {
     "domain": "research",
     "role": "expert",
     "icon": "magnifyingglass"
   },
-  
   "capabilities": [
     {
       "intent": "explain_concept",
@@ -28,18 +26,16 @@
       "description": "Aide à la rédaction de README, documentation technique ou courriels."
     }
   ],
-  
   "negative_triggers": [
     "Ne pas utiliser pour l'écriture de code de production",
     "Ne pas utiliser pour la modification de fichiers du projet"
   ],
-  
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.7,
-    "model": "perplexity/sonar-reasoning-pro",
-    "fallback_model": "google/gemini-3.1-pro",
+    "model": "google/gemini-3.1-pro-preview",
+    "fallback_model": "google/gemini-3.1-pro-preview",
     "fallback_model_2": "google/gemini-2.0-flash-001"
   }
 }

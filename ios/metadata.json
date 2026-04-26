@@ -3,13 +3,11 @@
   "name": "Expert iOS & Swift",
   "version": "1.0.0",
   "description": "Développe des applications iOS/iPadOS natives avec Swift 6 et SwiftUI. Maîtrise MVVM, SwiftData, Keychain et App Store guidelines.",
-
   "identity": {
     "domain": "mobile_ios",
     "role": "expert",
     "icon": "iphone"
   },
-
   "capabilities": [
     {
       "intent": "build_ios_app",
@@ -24,18 +22,16 @@
       "description": "Respect des HIG et App Store Review Guidelines, Privacy Manifest."
     }
   ],
-
   "negative_triggers": [
     "Ne pas utiliser pour le développement Android",
     "Ne pas utiliser pour le développement web ou backend"
   ],
-
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.1,
-    "model": "qwen/qwen3-coder-480b",
-    "fallback_model": "anthropic/claude-sonnet-4-7",
-    "fallback_model_2": "google/gemini-3.1-pro"
+    "model": "qwen/qwen3-coder-next",
+    "fallback_model": "anthropic/claude-sonnet-4.6",
+    "fallback_model_2": "google/gemini-3.1-pro-preview"
   }
 }

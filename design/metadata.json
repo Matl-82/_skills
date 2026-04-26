@@ -3,13 +3,11 @@
   "name": "Expert Design & Prompt Visuel",
   "version": "1.0.0",
   "description": "Génère des prompts optimisés pour Claude Design (UI, wireframes, illustrations, brand). Ne produit aucun asset graphique directement.",
-
   "identity": {
     "domain": "design_prompt_engineering",
     "role": "expert",
     "icon": "paintbrush"
   },
-
   "capabilities": [
     {
       "intent": "generate_ui_design_prompt",
@@ -28,19 +26,17 @@
       "description": "Affine et itère sur un prompt de design existant pour améliorer la précision du résultat."
     }
   ],
-
   "negative_triggers": [
     "Ne pas utiliser pour générer du code UI (déléguer à frontend)",
     "Ne pas utiliser pour analyser ou corriger des bugs visuels (déléguer à debug)",
     "Ne produit aucun fichier graphique ou asset directement"
   ],
-
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.6,
-    "model": "anthropic/claude-haiku-4-5-20251001",
-    "fallback_model": "google/gemini-2.0-flash",
-    "fallback_model_2": "deepseek/deepseek-v3.2"
+    "model": "anthropic/claude-sonnet-4.6",
+    "fallback_model": "google/gemini-3.1-flash-lite-preview",
+    "fallback_model_2": "deepseek/deepseek-v4-pro"
   }
 }

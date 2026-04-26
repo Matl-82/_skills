@@ -3,13 +3,11 @@
   "name": "Architecte Logiciel Senior",
   "version": "1.0.0",
   "description": "Définit la vision macro, choisit les technologies et structure les systèmes pour qu'ils soient robustes et évolutifs.",
-  
   "identity": {
     "domain": "architecture",
     "role": "expert",
     "icon": "square.stack.3d.up.fill"
   },
-  
   "capabilities": [
     {
       "intent": "system_design",
@@ -24,18 +22,16 @@
       "description": "Établissement des règles de nommage, protocoles de sécurité et standards de documentation."
     }
   ],
-  
   "negative_triggers": [
     "Ne pas utiliser pour l'écriture de code de production",
     "Ne pas utiliser pour le débogage chirurgical de bugs mineurs"
   ],
-  
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.3,
-    "model": "google/gemini-3.1-pro",
-    "fallback_model": "anthropic/claude-sonnet-4-7",
+    "model": "google/gemini-3.1-pro-preview",
+    "fallback_model": "anthropic/claude-sonnet-4.6",
     "fallback_model_2": "openai/gpt-5.5"
   }
 }
