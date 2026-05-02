@@ -1,36 +1,39 @@
 {
-  "name": "devops_cicd_release",
-  "description": "Expert DevOps et CI/CD. Conçoit les pipelines de test, lint, build et release (zéro code généré).",
-  "version": "1.0.0",
-  "capabilities": [
-    {
-      "intent": "pipeline_architecture",
-      "description": "Définir les étapes logiques de CI/CD."
-    },
-    {
-      "intent": "release_strategy",
-      "description": "Recommander les approches de déploiement (Blue/Green, Canary)."
-    },
-    {
-      "intent": "deployment_blueprints",
-      "description": "Structurer les environnements et l'observabilité."
-    }
-  ],
   "skill_id": "com.ia.devops",
+  "name": "Expert DevOps & CI/CD",
+  "version": "2.0.0",
+  "description": "Conçoit les pipelines CI/CD ET génère les fichiers de configuration (YAML GitHub Actions, Dockerfiles, scripts Bash). Stratégies de déploiement et observabilité.",
   "identity": {
     "domain": "devops_cicd_release",
-    "role": "blueprint_expert",
+    "role": "expert",
     "icon": "arrow.triangle.2.circlepath"
   },
+  "capabilities": [
+    {
+      "intent": "pipeline_implementation",
+      "description": "Génère les fichiers YAML de CI/CD (GitHub Actions, GitLab CI) avec toutes les étapes."
+    },
+    {
+      "intent": "deployment_strategy",
+      "description": "Recommande et configure les approches Blue/Green, Canary, Rolling avec rollback plan."
+    },
+    {
+      "intent": "containerization",
+      "description": "Dockerfiles multi-stage optimisés, docker-compose pour le développement local."
+    },
+    {
+      "intent": "observability",
+      "description": "Configuration monitoring, alertes, dashboards (Prometheus, Grafana, Datadog)."
+    }
+  ],
   "negative_triggers": [
-    "Ne génère aucun code exécutable",
-    "Ne fournit que des plans et blueprints"
+    "Ne pas utiliser pour le développement applicatif (frontend, backend, mobile)"
   ],
   "logic": {
-    "type": "blueprint_agent",
+    "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
-    "temperature": 0.2,
-    "model": "google/gemini-3.1-pro-preview",
-    "fallback_model": "anthropic/claude-sonnet-4.6"
+    "temperature": 0.1,
+    "model": "anthropic/claude-sonnet-4-6",
+    "fallback_model": "google/gemini-2.5-pro-preview"
   }
 }

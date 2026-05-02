@@ -1,8 +1,8 @@
 {
   "skill_id": "com.ia.backend",
   "name": "Expert Backend & API",
-  "version": "1.0.0",
-  "description": "Construit des APIs REST/GraphQL robustes (FastAPI, Node.js). Maîtrise bases de données, auth, sécurité et déploiement.",
+  "version": "2.0.0",
+  "description": "Conçoit l'architecture API ET implémente le code (FastAPI, Node.js). Cycle complet : blueprint contrat/schéma → code → validation.",
   "identity": {
     "domain": "backend",
     "role": "expert",
@@ -10,8 +10,12 @@
   },
   "capabilities": [
     {
+      "intent": "blueprint_api_architecture",
+      "description": "Contrats d'API complexes (pagination, filtrage, versioning), schémas de données, stratégie auth/RBAC, migrations zero-downtime."
+    },
+    {
       "intent": "build_api",
-      "description": "Conception et implémentation d'APIs REST ou GraphQL avec versioning et contrat clair."
+      "description": "Implémentation d'APIs REST ou GraphQL avec FastAPI/Node.js."
     },
     {
       "intent": "database_design",
@@ -19,7 +23,7 @@
     },
     {
       "intent": "auth_security",
-      "description": "Implémentation de l'authentification (JWT, OAuth2) et des autorisations."
+      "description": "Implémentation de l'authentification (JWT, OAuth2) et des autorisations (RBAC/ABAC)."
     }
   ],
   "negative_triggers": [
@@ -31,7 +35,7 @@
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.1,
     "model": "qwen/qwen3.6-plus",
-    "fallback_model": "google/gemini-3.1-pro-preview",
-    "fallback_model_2": "anthropic/claude-sonnet-4.6"
+    "fallback_model": "anthropic/claude-sonnet-4-6",
+    "fallback_model_2": "google/gemini-2.5-pro-preview"
   }
 }

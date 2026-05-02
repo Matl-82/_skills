@@ -1,14 +1,18 @@
 {
   "skill_id": "com.ia.frontend",
   "name": "Expert Frontend Web",
-  "version": "1.0.0",
-  "description": "Construit des interfaces web modernes (React, Next.js, Tailwind). Maîtrise performance, accessibilité et composants réutilisables.",
+  "version": "2.0.0",
+  "description": "Conçoit l'architecture UI ET implémente le code (React, Next.js, Tailwind). Cycle complet : blueprint composants → code → validation.",
   "identity": {
     "domain": "web_frontend",
     "role": "expert",
     "icon": "globe"
   },
   "capabilities": [
+    {
+      "intent": "blueprint_ui_architecture",
+      "description": "Découpage composants (Atomic Design), state management, routing, stratégie performance/a11y."
+    },
     {
       "intent": "build_ui",
       "description": "Implémentation de composants React/Next.js avec TypeScript et Tailwind CSS."
@@ -29,9 +33,9 @@
   "logic": {
     "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
-    "temperature": 0.1,
+    "temperature": 0.2,
     "model": "qwen/qwen3-coder-next",
-    "fallback_model": "anthropic/claude-sonnet-4.6",
-    "fallback_model_2": "openai/gpt-5.5-mini"
+    "fallback_model": "anthropic/claude-sonnet-4-6",
+    "fallback_model_2": "openai/gpt-4.1-mini"
   }
 }

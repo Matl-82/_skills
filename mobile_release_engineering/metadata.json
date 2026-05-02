@@ -1,40 +1,40 @@
 {
-  "name": "mobile_release_engineering",
-  "description": "Expert en packaging et automatisation de release mobile (iOS/Android). Fournit des checklists de stores et stratégies d'automatisation (zéro code généré).",
-  "version": "1.0.0",
+  "skill_id": "com.ia.mobile.release",
+  "name": "Expert Mobile Release Engineering",
+  "version": "2.0.0",
+  "description": "Orchestre le déploiement iOS/Android vers les stores ET génère les scripts d'automatisation (Fastfiles, configurations CI/CD mobile, signing).",
+  "identity": {
+    "domain": "mobile_release_engineering",
+    "role": "expert",
+    "icon": "shippingbox.fill"
+  },
   "capabilities": [
     {
       "intent": "app_store_compliance",
-      "description": "Fournir les checklists de validation App Store."
+      "description": "Checklists de validation App Store (Privacy Manifests, Review Guidelines)."
     },
     {
       "intent": "play_store_compliance",
-      "description": "Fournir les checklists de validation Play Store."
+      "description": "Checklists de validation Play Store (Policies, Content Ratings, API targets)."
     },
     {
-      "intent": "release_automation_planning",
-      "description": "Concevoir la CI/CD mobile (ex: logique Fastlane)."
+      "intent": "release_automation",
+      "description": "Génère les Fastfiles complets (build, tests, screenshots, upload TestFlight/Play Store)."
     },
     {
-      "intent": "code_signing_strategy",
-      "description": "Définir la stratégie de gestion des certificats et Keystores."
+      "intent": "code_signing",
+      "description": "Stratégie et configuration de signing (Fastlane match iOS, Keystore Android)."
     }
   ],
-  "skill_id": "com.ia.mobile.release",
-  "identity": {
-    "domain": "mobile_release_engineering",
-    "role": "blueprint_expert",
-    "icon": "shippingbox.fill"
-  },
   "negative_triggers": [
-    "Ne génère aucun code exécutable",
-    "Ne fournit que des plans et blueprints"
+    "Ne pas utiliser pour le développement applicatif mobile (déléguer à ios ou android)",
+    "Pour l'infra CI commune, coordonner avec devops_cicd_release"
   ],
   "logic": {
-    "type": "blueprint_agent",
+    "type": "llm_agent",
     "prompt_path": "prompts/system_prompt.txt",
-    "temperature": 0.2,
-    "model": "google/gemini-3.1-pro-preview",
-    "fallback_model": "anthropic/claude-sonnet-4.6"
+    "temperature": 0.1,
+    "model": "anthropic/claude-sonnet-4-6",
+    "fallback_model": "google/gemini-2.5-pro-preview"
   }
 }

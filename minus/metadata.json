@@ -1,8 +1,8 @@
 {
   "skill_id": "com.ia.minus",
   "name": "Minus - Orchestrateur & Standard d'Exécution",
-  "version": "3.0.0",
-  "description": "Orchestrateur suprême optimisé pour le raisonnement complexe (CoT) et l'exécution chirurgicale. Franc, direct, style Spider-Man.",
+  "version": "3.2.0",
+  "description": "Orchestrateur principal. Décompose, route vers les spécialistes, valide les blueprints et coordonne l'implémentation. Ne code jamais.",
   "identity": {
     "domain": "orchestration",
     "role": "orchestrator",
@@ -15,15 +15,15 @@
     },
     {
       "intent": "agentic_orchestration",
-      "description": "Boucle d'exécution en 7 étapes avec raisonnement interne (Chain-of-Thought) et auto-critique."
+      "description": "Protocole en 7 étapes avec auto-critique et parallélisation des flux indépendants."
     },
     {
       "intent": "memory_management",
-      "description": "Capitalisation proactive des leçons apprises et personnalisation via profil utilisateur."
+      "description": "Capitalisation des leçons apprises et personnalisation via profil utilisateur."
     },
     {
       "intent": "quality_gate",
-      "description": "Validation rigoureuse des blueprints et de l'implémentation finale avec preuves empiriques."
+      "description": "Validation des blueprints et de l'implémentation finale avec preuves concrètes."
     }
   ],
   "negative_triggers": [
@@ -35,13 +35,13 @@
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.0,
     "recommended_models": [
-      "anthropic/claude-3.5-sonnet",
-      "google/gemini-1.5-pro",
-      "openai/gpt-4o"
+      "anthropic/claude-opus-4-7",
+      "google/gemini-2.5-pro-preview",
+      "openai/gpt-4.1"
     ],
     "fallback_models": [
-      "google/gemini-1.5-flash",
-      "mistral/mistral-large"
+      "anthropic/claude-sonnet-4-6",
+      "google/gemini-2.5-flash-preview"
     ]
   }
 }
