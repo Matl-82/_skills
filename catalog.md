@@ -2,15 +2,15 @@
 
 | Icône | Nom | Dossier | Mission |
 | :--- | :--- | :--- | :--- |
-| 🛡️ | **Minus** | [`minus`](minus/) | Orchestrateur principal — décompose, route, valide, mémorise. |
-| 🏗️ | **Architecte** | [`architecte`](architecte/) | Vision macro, choix technologiques, structure système toutes plateformes. |
-| 🔨 | **Code** | [`code`](code/) | Implémentation générique — Python, scripts, CLI, glue code. |
-| 🌐 | **Frontend** | [`frontend`](frontend/) | Web : React, Next.js, Tailwind, TypeScript, performance, accessibilité. |
-| ⚙️ | **Backend** | [`backend`](backend/) | API REST/GraphQL, FastAPI/Node.js, bases de données, auth, déploiement. |
-| 📱 | **iOS** | [`ios`](ios/) | Apps iPhone/iPad — Swift 6, SwiftUI, MVVM, App Store. |
-| 🤖 | **Android** | [`android`](android/) | Apps Android — Kotlin 2, Jetpack Compose, MVVM/MVI, Google Play. |
-| 🐜 | **Debug** | [`debug`](debug/) | Analyse forensique et corrections chirurgicales toutes plateformes. |
-| 🧪 | **QA Engineer** | [`qa_engineer`](qa_engineer/) | Tests, edge cases, régression — XCTest, Espresso, Jest, pytest. |
+| 🛡️ | **Minus v3** | [`minus`](minus/) | Orchestrateur Élite — CoT, routage intelligent, validation empirique. |
+| 🏗️ | **Architecte v3** | [`architecte`](architecte/) | Vision macro, trade-offs, patterns avancés (C4), blueprints Mermaid. |
+| 🔨 | **Code v3** | [`code`](code/) | Ingénierie suprême — TDD, implémentation incrémentale, validation continue. |
+| 🌐 | **Frontend** | [`frontend`](frontend/) | Spécifications UI Web, Core Web Vitals, accessibilité. |
+| ⚙️ | **Backend** | [`backend`](backend/) | Spécifications API REST/GraphQL, schémas DB, auth enterprise. |
+| 📱 | **iOS** | [`ios`](ios/) | Spécifications iOS — Swift 6, SwiftUI, MVVM, App Store. |
+| 🤖 | **Android** | [`android`](android/) | Spécifications Android — Kotlin 2, Compose, MVVM/MVI. |
+| 🐜 | **Debug v3** | [`debug`](debug/) | Analyse forensique, diagnostic cause racine, ordonnance de correction. |
+| 🧪 | **QA Engineer v3** | [`qa_engineer`](qa_engineer/) | Stratégies impitoyables, edge cases, garant de la non-régression. |
 | 🛡️🛡️ | **Security Auditor** | [`security_auditor`](security_auditor/) | Audit sécurité web, mobile, backend — OWASP, secrets, conformité. |
 | 🔍 | **Recherche** | [`recherche`](recherche/) | Veille tech, explication, documentation, rédaction technique. |
 | 🪄 | **Fine Prompt** | [`fine_prompt`](fine_prompt/) | Optimisation de prompts, sélection de modèle LLM (2026). |

@@ -1,8 +1,8 @@
 {
   "skill_id": "com.ia.minus",
   "name": "Minus - Orchestrateur & Standard d'Exécution",
-  "version": "2.0.0",
-  "description": "Orchestrateur principal avec mémoire persistante. Franc, direct, avec la verve de Spider-Man. Décompose, route, valide et capitalise les erreurs.",
+  "version": "3.0.0",
+  "description": "Orchestrateur suprême optimisé pour le raisonnement complexe (CoT) et l'exécution chirurgicale. Franc, direct, style Spider-Man.",
   "identity": {
     "domain": "orchestration",
     "role": "orchestrator",
@@ -11,31 +11,37 @@
   "capabilities": [
     {
       "intent": "decompose_and_route",
-      "description": "Analyse une demande, crée une roadmap et route chaque sous-tâche vers l'expert approprié (architecte, code, debug, qa_engineer, security_auditor, recherche, fine_prompt)."
+      "description": "Analyse systémique, planification stratégique et délégation vers experts spécialisés."
     },
     {
-      "intent": "standardized_execution",
-      "description": "Exécution de tâches via une boucle rigoureuse en 7 étapes (Comprendre, Planifier, Déléguer, Exécuter, Valider, Capitaliser, Clôturer)."
+      "intent": "agentic_orchestration",
+      "description": "Boucle d'exécution en 7 étapes avec raisonnement interne (Chain-of-Thought) et auto-critique."
     },
     {
-      "intent": "continuous_learning",
-      "description": "Identification et documentation des erreurs dans le registre erreurs_apprises.md."
+      "intent": "memory_management",
+      "description": "Capitalisation proactive des leçons apprises et personnalisation via profil utilisateur."
     },
     {
-      "intent": "coherence_verification",
-      "description": "Vérifie que l'implémentation respecte les choix architecturaux et la cohérence globale du projet."
+      "intent": "quality_gate",
+      "description": "Validation rigoureuse des blueprints et de l'implémentation finale avec preuves empiriques."
     }
   ],
   "negative_triggers": [
-    "Ne pas utiliser pour l'écriture directe de code",
-    "Ne pas utiliser pour l'analyse technique profonde d'un seul domaine"
+    "Ne jamais écrire de code source directement",
+    "Ne pas bypasser la phase de blueprint pour les tâches complexes"
   ],
   "logic": {
-    "type": "global_protocol",
+    "type": "agentic_orchestrator",
     "prompt_path": "prompts/system_prompt.txt",
     "temperature": 0.0,
-    "model": "openai/gpt-5.5",
-    "fallback_model": "google/gemini-3.1-pro-preview",
-    "fallback_model_2": "google/gemma-3-27b-it:free"
+    "recommended_models": [
+      "anthropic/claude-3.5-sonnet",
+      "google/gemini-1.5-pro",
+      "openai/gpt-4o"
+    ],
+    "fallback_models": [
+      "google/gemini-1.5-flash",
+      "mistral/mistral-large"
+    ]
   }
 }
